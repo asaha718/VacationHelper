@@ -2,8 +2,15 @@
     <h1>Welcome to the best {{title}}</h1>
     <form>
         <label for="budget">Max Budget (between 0 and 10000):</label>
-        <input type="range" id="budget" name="budget" min="0" max="10000">
+        <input type="range" oninput="myFunction(this.value)">
+        <p id="budget" name="budget" min=0 max=10000 ></p>
       </form> 
+      <script>
+        function myFunction(val) {//ww  w. ja  va2  s .  com
+            document.getElementById("budget").innerHTML = val;
+        }
+        </script>
+
     <label for="weather">What is your weather be preference?:</label>
     <select name="weather" id="weather" [(ngModel)]="weather">
       <option value=tropical>tropical </option>
@@ -11,17 +18,11 @@
       <option value=cold>cold </option>
     </select>
     <div>
-      <button (click)="onSendMessage()">Add</button>
+      <button (click)="onSendMessage()">Get Destination</button>
     </div>
   </div>
   
-  <h2>Athletes</h2>
+  <h2>We recommend: </h2>
   <div>
-    <ul>
-      <li *ngFor="let currentAthlete of athletes">
-        {{currentAthlete.name}} ({{currentAtßhlete.sport}})
-        <span *ngIf="currentAthlete.isActive"> is active </span>
-        <span *ngIf="!currentAthlete.isActive"> is not active </span>
-      </li>
-    </ul>
+    {{name}}
   </div>
