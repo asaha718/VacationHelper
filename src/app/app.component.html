@@ -1,16 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
 <div>
     <h1>Welcome to the best {{title}}</h1>
     <form>
         <label for="budget">Max Budget (between 0 and 10000):</label>
-        <input type="range" oninput="myFunction(this.value)">
-        <p id="budget" name="budget" min=0 max=10000 ></p>
+        <input type="range" id="budget" name="budget" min=0 max=10000>
       </form> 
-      <script>
-        function myFunction(val) {//ww  w. ja  va2  s .  com
-            document.getElementById("budget").innerHTML = val;
-        }
+        
+        <script>
+            document.getElementById('budget').addEventListener('change',function() {
+            this.setAttribute('value',this.value);
+        });
         </script>
-
     <label for="weather">What is your weather be preference?:</label>
     <select name="weather" id="weather" [(ngModel)]="weather">
       <option value=tropical>tropical </option>
@@ -26,3 +28,7 @@
   <div>
     {{name}}
   </div>
+
+
+</body>
+</html>
