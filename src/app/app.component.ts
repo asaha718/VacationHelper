@@ -64,7 +64,7 @@ export class AppComponent {
     let name = "Staycation";
     switch(weather) {
       case "tropical": {
-        for (let x=this.tropical_destinations.length-1; x>0; x--) {
+        for (let x=this.tropical_destinations.length-1; x>=0; x--) {
           if (this.tropical_destinations[x].budget <= budget) {
             name = this.tropical_destinations[x].name;
           }
@@ -72,7 +72,7 @@ export class AppComponent {
         break;
       }
       case "hot": {
-        for (let x=this.hot_destinations.length-1; x>0; x--) {
+        for (let x=this.hot_destinations.length-1; x>=0; x--) {
           if (this.hot_destinations[x].budget <= budget) {
             name = this.hot_destinations[x].name;
           }
@@ -80,7 +80,7 @@ export class AppComponent {
         break;
       }
       case "cold": {
-        for (let x=this.cold_destinations.length-1; x>0; x--) {
+        for (let x=this.cold_destinations.length-1; x>=0; x--) {
           if (this.cold_destinations[x].budget <= budget) {
             name = this.cold_destinations[x].name;
           }
