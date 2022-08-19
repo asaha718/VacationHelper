@@ -5,14 +5,15 @@
     <h1>Welcome to the best {{title}}</h1>
     <form>
         <label for="budget">Max Budget (between 0 and 10000):</label>
-        <input type="range" id="budget" name="budget" min=0 max=10000>
-      </form> 
-        
+        <input type="range" id="budget" name="budget" min=0 max=10000 [(ngModel)]="budget">
         <script>
-            document.getElementById('budget').addEventListener('change',function() {
-            this.setAttribute('value',this.value);
-        });
-        </script>
+          document.getElementById('budget').addEventListener('change',function() {
+          this.setAttribute('value',this.value);
+      });
+      </script>
+      {{budget}}
+      </form> 
+
     <label for="weather">What is your weather be preference?:</label>
     <select name="weather" id="weather" [(ngModel)]="weather">
       <option value=tropical>tropical </option>
